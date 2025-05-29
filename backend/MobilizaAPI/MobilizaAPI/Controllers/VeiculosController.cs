@@ -43,5 +43,23 @@ namespace MobilizaAPI.Controllers
                 return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
             }
         }
+
+        [HttpPost("CadastroVeiculo")] //Cadastrar seu veículo
+        public IActionResult Veiculos([FromBody] List<veiculos> veiculos)
+        {
+            try
+            {
+                foreach (var veiculo in veiculos)
+                {
+                    _dbContext.veiculos.Add(veiculo);
+                    _dbContext.SaveChanges();
+                }
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Erro ao realizar login.", erro = ex.Message });
+            }
+        }
     }
 }
