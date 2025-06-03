@@ -73,7 +73,7 @@ namespace MobilizaAPI.Controllers
                 entradaAtual.hora = entrada.hora;
                 entradaAtual.usuarios_id = entrada.usuarios_id;
                 entradaAtual.motivo_entrada = entrada.motivo_entrada;
-                entradaAtual.tipo_veiculo_id = entrada.tipo_veiculo_id;
+                entradaAtual.veiculo_id = entrada.veiculo_id;
 
                 _dbContext.Update(entradaAtual);
                 await _dbContext.SaveChangesAsync();
