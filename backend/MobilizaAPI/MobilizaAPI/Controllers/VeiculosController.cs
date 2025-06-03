@@ -30,7 +30,7 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpGet("VeiculoEspecifico/{id}")] //Trazer curso específico
+        [HttpGet("VeiculoEspecifico/{id}")] //Trazer veiculo específico
         public async Task<ActionResult<IEnumerable<veiculos>>> GetTipo(int id)
         {
             try
@@ -100,6 +100,20 @@ namespace MobilizaAPI.Controllers
                 await _dbContext.SaveChangesAsync();
 
                 return Ok("Veiculo removido com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpGet("VeiculoPorUsuario/{id}")] //Trazer veiculo por usuario
+        public async Task<ActionResult<IEnumerable<veiculos>>> GetVeiculos(int id)
+        {
+            try
+            {
+                var veiculos = await _dbContext.veiculos.Where(i => i.usuario_id == id).ToListAsync();
+                return Ok(veiculos);
             }
             catch (Exception ex)
             {
