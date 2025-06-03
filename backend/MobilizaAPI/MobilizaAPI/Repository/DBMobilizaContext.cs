@@ -17,5 +17,6 @@ namespace MobilizaAPI.Repository
         public DbSet<tipo_veiculo> tipo_veiculo { get; set; }
         public DbSet<usuarios> usuarios { get; set; }
         public DbSet<veiculos> veiculos { get; set; }
+        public DbSet<gerenciadores > gerenciadores { get; set; }
     }
 }

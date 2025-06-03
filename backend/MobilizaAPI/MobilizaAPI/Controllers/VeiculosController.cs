@@ -61,5 +61,50 @@ namespace MobilizaAPI.Controllers
                 return StatusCode(500, new { message = "Erro ao realizar login.", erro = ex.Message });
             }
         }
+
+        [HttpPut("AlterarVeiculo/{id}")] //Alterar veiculo por id
+        public async Task<ActionResult<veiculos>> Atualizar(int id, [FromBody] veiculos veiculos)
+        {
+            try
+            {
+                var veiculoAtual = await _dbContext.veiculos.FindAsync(id);
+
+                if (veiculoAtual == null)
+                    return NotFound();
+
+                veiculoAtual.placa = veiculos.placa;
+                veiculoAtual.tipo_veiculo_id = veiculos.tipo_veiculo_id;
+                veiculoAtual.usuario_id = veiculos.usuario_id;
+
+                _dbContext.Update(veiculoAtual);
+                await _dbContext.SaveChangesAsync();
+                return Ok(veiculoAtual);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpDelete("DeletarVeiculo/{id}")] // Deletar veiculo específico
+        public async Task<ActionResult> Deletar(int id)
+        {
+            try
+            {
+                var veiculos = await _dbContext.veiculos.FindAsync(id);
+
+                if (veiculos == null)
+                    return NotFound();
+
+                _dbContext.veiculos.Remove(veiculos);
+                await _dbContext.SaveChangesAsync();
+
+                return Ok("Veiculo removido com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
     }
 }

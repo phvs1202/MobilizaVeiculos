@@ -43,5 +43,63 @@ namespace MobilizaAPI.Controllers
                 return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
             }
         }
+
+        [HttpPost("AdicionarCurso")] //Adicionar curso
+        public async Task<ActionResult<curso>> AdicionarCurso([FromBody] curso curso)
+        {
+            try
+            {
+                _dbContext.curso.Add(curso);
+                await _dbContext.SaveChangesAsync();
+                return Ok(curso);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpPut("AlterarCurso/{id}")] //Alterar curso por id
+        public async Task<ActionResult<curso>> Atualizar(int id, [FromBody] curso curso)
+        {
+            try
+            {
+                var cursoAtual = await _dbContext.curso.FindAsync(id);
+
+                if (cursoAtual == null)
+                    return NotFound();
+
+                cursoAtual.nome = curso.nome;
+
+                _dbContext.Update(cursoAtual);
+                await _dbContext.SaveChangesAsync();
+                return Ok(cursoAtual);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpDelete("DeletarCurso/{id}")] // Deletar curso específico
+        public async Task<ActionResult> Deletar(int id)
+        {
+            try
+            {
+                var curso = await _dbContext.curso.FindAsync(id);
+
+                if (curso == null)
+                    return NotFound();
+
+                _dbContext.curso.Remove(curso);
+                await _dbContext.SaveChangesAsync();
+
+                return Ok("Curso removido com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
     }
 }

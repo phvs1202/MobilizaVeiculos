@@ -8,5 +8,6 @@ namespace MobilizaAPI.Model
         public DateTime hora { get; set; }
         public int usuarios_id { get; set; }
         public string motivo_entrada { get; set; }
+        public int tipo_veiculo_id { get; set; }
     }
 }

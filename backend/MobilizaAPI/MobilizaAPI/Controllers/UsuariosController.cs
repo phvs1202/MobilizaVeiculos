@@ -97,5 +97,63 @@ namespace MobilizaAPI.Controllers
             }
             return Ok(User);
         }
+
+        [HttpPut("AlterarUsuario/{id}")] //Alterar usuario por id
+        public async Task<ActionResult<usuarios>> Atualizar(int id, [FromBody] usuarios usuarios)
+        {
+            try
+            {
+                var usuarioAtual = await _dbContext.usuarios.FindAsync(id);
+
+                if (usuarioAtual == null)
+                    return NotFound();
+
+                usuarioAtual.nome = usuarios.nome;
+                usuarioAtual.email = usuarios.email;
+                usuarioAtual.senha = PasswordHasher.HashPassword(usuarios.senha);
+                usuarioAtual.tipo_usuario_id = usuarios.tipo_usuario_id;
+                usuarioAtual.curso_id = usuarios.curso_id;
+
+                _dbContext.Update(usuarioAtual);
+                await _dbContext.SaveChangesAsync();
+                return Ok(usuarioAtual);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpDelete("DeletarUsuario/{id}")] // Deletar Usuário específico
+        public async Task<ActionResult> Deletar(int id)
+        {
+            try
+            {
+                var usuario = await _dbContext.usuarios.FindAsync(id);
+
+                if (usuario == null)
+                    return NotFound();
+
+                var entradas = await _dbContext.entrada.Where(i => i.usuarios_id == usuario.id).ToListAsync();
+                var veiculos = await _dbContext.veiculos.Where(i => i.usuario_id == usuario.id).ToListAsync();
+
+                _dbContext.entrada.RemoveRange(entradas);
+                await _dbContext.SaveChangesAsync();
+
+                _dbContext.veiculos.RemoveRange(veiculos);
+                await _dbContext.SaveChangesAsync();
+
+                _dbContext.usuarios.Remove(usuario);
+                await _dbContext.SaveChangesAsync();
+
+                return Ok("O usuário e seus dados foram removidos com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                var detalhesErro = ex.InnerException != null ? $" - Detalhes: {ex.InnerException.Message}" : "";
+                return BadRequest($"{ex.Message}{detalhesErro}");
+            }
+        }
+
     }
 }

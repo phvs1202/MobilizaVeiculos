@@ -43,5 +43,64 @@ namespace MobilizaAPI.Controllers
                 return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
             }
         }
+
+        [HttpPost("AdicionarSaida")] //Adicionar saida
+        public async Task<ActionResult<saida>> AdicionarSaida([FromBody] saida saida)
+        {
+            try
+            {
+                _dbContext.saida.Add(saida);
+                await _dbContext.SaveChangesAsync();
+                return Ok(saida);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpPut("AlterarSaida/{id}")] //Alterar saida por id
+        public async Task<ActionResult<saida>> Atualizar(int id, [FromBody] saida saida)
+        {
+            try
+            {
+                var saidaAtual = await _dbContext.saida.FindAsync(id);
+
+                if (saidaAtual == null)
+                    return NotFound();
+
+                saidaAtual.hora = saida.hora;
+                saidaAtual.entrada_id = saida.entrada_id;
+
+                _dbContext.Update(saidaAtual);
+                await _dbContext.SaveChangesAsync();
+                return Ok(saidaAtual);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpDelete("DeletarSaida/{id}")] // Deletar saida específica
+        public async Task<ActionResult> Deletar(int id)
+        {
+            try
+            {
+                var saida = await _dbContext.saida.FindAsync(id);
+
+                if (saida == null)
+                    return NotFound();
+
+                _dbContext.saida.Remove(saida);
+                await _dbContext.SaveChangesAsync();
+
+                return Ok("Saida removida com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
     }
 }
