@@ -220,5 +220,19 @@ namespace MobilizaAPI.Controllers
                 return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
             }
         }
+
+        [HttpGet("qtdUser")] //Quantidade de usuarios
+        public async Task<ActionResult<IEnumerable<usuarios>>> quantidade()
+        {
+            try
+            {
+                var usuarios = await _dbContext.usuarios.ToListAsync();
+                return Ok(usuarios.Count);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
     }
 }
