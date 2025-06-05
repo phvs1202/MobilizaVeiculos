@@ -52,9 +52,10 @@ namespace MobilizaAPI.Controllers
                 foreach (var veiculo in veiculos)
                 {
                     _dbContext.veiculos.Add(veiculo);
+                    veiculo.status_id = 1;
                     _dbContext.SaveChanges();
                 }
-                return Ok();
+                return Ok("Veículo cadastrado");
             }
             catch (Exception ex)
             {
@@ -114,6 +115,52 @@ namespace MobilizaAPI.Controllers
             {
                 var veiculos = await _dbContext.veiculos.Where(i => i.usuario_id == id).ToListAsync();
                 return Ok(veiculos);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpPut("InativarVeiculos/{id}")] //status de ativo para inativo
+        public async Task<ActionResult<veiculos>> Inativar(int id)
+        {
+            try
+            {
+                var veiculos = await _dbContext.veiculos.FindAsync(id);
+                veiculos.status_id = 2;
+                await _dbContext.SaveChangesAsync();
+                return Ok("Veículo foi inativado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpGet("VeiculosAtivos/{id}")] //Trazer veiculos ativos
+        public async Task<ActionResult<IEnumerable<veiculos>>> GetAtivos(int id)
+        {
+            try
+            {
+                var veiculos = await _dbContext.veiculos.Where(i => i.status_id == 1).ToListAsync();
+                var especifico = veiculos.Where(i => i.usuario_id == id).ToList();
+                return Ok(especifico);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpGet("VeiculosInativos/{id}")] //Trazer veiculos inativos
+        public async Task<ActionResult<IEnumerable<veiculos>>> GetInativos(int id)
+        {
+            try
+            {
+                var veiculos = await _dbContext.veiculos.Where(i => i.status_id == 2).ToListAsync();
+                var especifico = veiculos.Where(i => i.usuario_id == id).ToList();
+                return Ok(especifico);
             }
             catch (Exception ex)
             {

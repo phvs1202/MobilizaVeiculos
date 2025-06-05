@@ -50,6 +50,7 @@ namespace MobilizaAPI.Controllers
             try
             {
                 _dbContext.curso.Add(curso);
+                curso.status_id = 1;
                 await _dbContext.SaveChangesAsync();
                 return Ok(curso);
             }
@@ -95,6 +96,22 @@ namespace MobilizaAPI.Controllers
                 await _dbContext.SaveChangesAsync();
 
                 return Ok("Curso removido com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpPut("InativarCurso/{id}")] //status de ativo para inativo
+        public async Task<ActionResult<curso>> Inativar(int id)
+        {
+            try
+            {
+                var curso = await _dbContext.curso.FindAsync(id);
+                curso.status_id = 2;
+                await _dbContext.SaveChangesAsync();
+                return Ok("Curso foi inativado com sucesso!");
             }
             catch (Exception ex)
             {

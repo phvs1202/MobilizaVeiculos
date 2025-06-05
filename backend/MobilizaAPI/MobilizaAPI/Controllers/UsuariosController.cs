@@ -6,6 +6,10 @@ using MobilizaAPI.Model;
 using MobilizaAPI.Repository;
 using Org.BouncyCastle.Crypto;
 using MobilizaAPI.Helper;
+using System.Security.Policy;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using QRCoder;
+using System.Drawing.Imaging;
 
 namespace MobilizaAPI.Controllers
 {
@@ -87,13 +91,45 @@ namespace MobilizaAPI.Controllers
                     return BadRequest("Email já existente, crie outro.");
 
                 User.senha = PasswordHasher.HashPassword(User.senha);
+                User.status_id = 1;
 
                 _dbContext.usuarios.Add(User);
                 await _dbContext.SaveChangesAsync();
+
+                //Gerar QRCode
+                string tipoUsuario = User.tipo_usuario_id switch
+                {
+                    1 => "Aluno",
+                    2 => "Funcionario",
+                    3 => "Fornecedor",
+                    4 => "Visitante",
+                    _ => "Desconhecido"
+                };
+
+                var conteudoCodigo = $"Nome-{User.nome}, Publico-{tipoUsuario}, CNH-{User.numero_cnh}";
+
+                QRCodeGenerator GeradorQR = new QRCodeGenerator();
+                var qrData = GeradorQR.CreateQrCode(conteudoCodigo, QRCodeGenerator.ECCLevel.Q);
+                using var qrCode = new QRCode(qrData);
+                using var qrImage = qrCode.GetGraphic(20);
+
+                // Garantir que o diretório existe
+                string pastaRaiz = Path.Combine(Directory.GetCurrentDirectory(), "QRCodeImagens");
+                if (!Directory.Exists(pastaRaiz))
+                {
+                    Directory.CreateDirectory(pastaRaiz); // Cria a pasta se não existir
+                }
+
+                // Gerar nome único para o arquivo, baseado no conteúdo do QR Code
+                string nomeArquivo = $"{conteudoCodigo}.png";
+                string caminhoCompleto = Path.Combine(pastaRaiz, nomeArquivo);
+
+                // Salvar a imagem do QR Code
+                qrImage.Save(caminhoCompleto, ImageFormat.Png);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
             }
             return Ok(User);
         }
@@ -155,5 +191,34 @@ namespace MobilizaAPI.Controllers
             }
         }
 
+        [HttpPut("InativarUser/{id}")] //status de ativo para inativo
+        public async Task<ActionResult<usuarios>> Inativar(int id)
+        {
+            try
+            {
+                var usuarios = await _dbContext.usuarios.FindAsync(id);
+                usuarios.status_id = 2;
+                await _dbContext.SaveChangesAsync();
+                return Ok("Usuário foi inativado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpGet("CnhEspecifico/{cnh}")] //Procurar user por cnh
+        public async Task<ActionResult<IEnumerable<usuarios>>> GetPorCNH(int cnh)
+        {
+            try
+            {
+                var usuarios = _dbContext.usuarios.Where(i => EF.Functions.Like(i.numero_cnh.ToString(), $"{cnh}%")).ToList();
+                return Ok(usuarios);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
     }
 }

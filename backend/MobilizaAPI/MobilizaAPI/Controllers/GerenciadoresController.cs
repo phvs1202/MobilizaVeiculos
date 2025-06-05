@@ -83,6 +83,7 @@ namespace MobilizaAPI.Controllers
                     return BadRequest("Email já existente, crie outro.");
 
                 User.senha = PasswordHasher.HashPassword(User.senha);
+                User.status_id = 1;
 
                 _dbContext.gerenciadores.Add(User);
                 await _dbContext.SaveChangesAsync();
@@ -132,6 +133,22 @@ namespace MobilizaAPI.Controllers
                 await _dbContext.SaveChangesAsync();
 
                 return Ok("Gerenciador removido com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpPut("InativarGerenciador/{id}")] //status de ativo para inativo
+        public async Task<ActionResult<gerenciadores>> Inativar(int id)
+        {
+            try
+            {
+                var gerenciadores = await _dbContext.gerenciadores.FindAsync(id);
+                gerenciadores.status_id = 2;
+                await _dbContext.SaveChangesAsync();
+                return Ok("Gerenciadores foi inativado com sucesso!");
             }
             catch (Exception ex)
             {

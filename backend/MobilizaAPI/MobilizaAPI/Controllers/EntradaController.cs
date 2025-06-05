@@ -51,6 +51,7 @@ namespace MobilizaAPI.Controllers
             try
             {
                 _dbContext.entrada.Add(entrada);
+                entrada.status_id = 1;
                 await _dbContext.SaveChangesAsync();
                 return Ok(entrada);
             }
@@ -99,6 +100,36 @@ namespace MobilizaAPI.Controllers
                 await _dbContext.SaveChangesAsync();
 
                 return Ok("Entrada removida com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpPut("InativarEntrada/{id}")] //status de ativo para inativo
+        public async Task<ActionResult<entrada>> Inativar(int id)
+        {
+            try
+            {
+                var entrada = await _dbContext.entrada.FindAsync(id);
+                entrada.status_id = 2;
+                await _dbContext.SaveChangesAsync();
+                return Ok("Entrada foi inativado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpGet("DoisMeses")] //Procurar usuários que não entram há 2 meses
+        public async Task<ActionResult<IEnumerable<entrada>>> doisMeses()
+        {
+            try
+            {
+                var entradas = await _dbContext.entrada.Select(i => new { i.usuarios_id, i.veiculo_id, i.hora }).Where(i => i.hora < DateTime.Now.AddMonths(-2)).ToListAsync();
+                return Ok(entradas);
             }
             catch (Exception ex)
             {
