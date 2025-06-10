@@ -46,6 +46,28 @@ namespace MobilizaAPI.Controllers
             }
         }
 
+        [HttpPost("CadastrarCnh/{id}")] //Cadastrar cnh
+        public async Task<ActionResult<cnh>> CriarCnh(int id, [FromBody] cnh cnh)
+        {
+            try
+            {
+                var a = await _dbContext.cnh.Where(i => i.numero_cnh == cnh.numero_cnh).FirstOrDefaultAsync();
+                if (a != null)
+                    return BadRequest("Número já existente, crie outro.");
+
+                cnh.usuario_id = id;
+                cnh.status_id = 1;
+
+                _dbContext.cnh.Add(cnh);
+                _dbContext.SaveChanges();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
         [HttpPut("AlterarCnh/{id}")] //Alterar cnh por id
         public async Task<ActionResult<cnh>> Atualizar(int id, [FromBody] cnh cnh)
         {
@@ -117,6 +139,52 @@ namespace MobilizaAPI.Controllers
             {
                 var cnh = await _dbContext.cnh.Where(i => EF.Functions.Like(i.numero_cnh.ToString(), $"{numero}%")).ToListAsync();
                 return Ok(cnh);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpPost("CriacaoQRCode/{id}")] //Criar qrcode
+        public async Task<ActionResult<IEnumerable<cnh>>> CriarQrcode(int id)
+        {
+            try
+            {
+                var User = _dbContext.usuarios.Where(i => i.id == id).FirstOrDefault();
+
+                //Gerar QRCode
+                string tipoUsuario = User.tipo_usuario_id switch
+                {
+                    1 => "Aluno",
+                    2 => "Funcionario",
+                    3 => "Fornecedor",
+                    4 => "Visitante",
+                    _ => "Desconhecido"
+                };
+
+                var cnh = _dbContext.cnh.Where(i => i.usuario_id == id).FirstOrDefault();
+                var conteudoCodigo = $"Nome-{User.nome}, Publico-{tipoUsuario}, CNH-{cnh.numero_cnh}";
+
+                QRCodeGenerator GeradorQR = new QRCodeGenerator();
+                var qrData = GeradorQR.CreateQrCode(conteudoCodigo, QRCodeGenerator.ECCLevel.Q);
+                using var qrCode = new QRCode(qrData);
+                using var qrImage = qrCode.GetGraphic(20);
+
+                // Garantir que o diretório existe
+                string pastaRaiz = Path.Combine(Directory.GetCurrentDirectory(), "QRCodeImagens");
+                if (!Directory.Exists(pastaRaiz))
+                {
+                    Directory.CreateDirectory(pastaRaiz); // Cria a pasta se não existir
+                }
+
+                // Gerar nome único para o arquivo, baseado no conteúdo do QR Code
+                string nomeArquivo = $"{conteudoCodigo}.png";
+                string caminhoCompleto = Path.Combine(pastaRaiz, nomeArquivo);
+
+                // Salvar a imagem do QR Code
+                qrImage.Save(caminhoCompleto, ImageFormat.Png);
+                return Ok("QRCode referente a essa conta foi criada!");
             }
             catch (Exception ex)
             {

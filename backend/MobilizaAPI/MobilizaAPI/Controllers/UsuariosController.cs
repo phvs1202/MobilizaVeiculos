@@ -94,38 +94,7 @@ namespace MobilizaAPI.Controllers
                 User.status_id = 1;
 
                 _dbContext.usuarios.Add(User);
-                await _dbContext.SaveChangesAsync();
-
-                //Gerar QRCode
-                string tipoUsuario = User.tipo_usuario_id switch
-                {
-                    1 => "Aluno",
-                    2 => "Funcionario",
-                    3 => "Fornecedor",
-                    4 => "Visitante",
-                    _ => "Desconhecido"
-                };
-
-                var conteudoCodigo = $"Nome-{User.nome}, Publico-{tipoUsuario}, CNH-{User.numero_cnh}";
-
-                QRCodeGenerator GeradorQR = new QRCodeGenerator();
-                var qrData = GeradorQR.CreateQrCode(conteudoCodigo, QRCodeGenerator.ECCLevel.Q);
-                using var qrCode = new QRCode(qrData);
-                using var qrImage = qrCode.GetGraphic(20);
-
-                // Garantir que o diretório existe
-                string pastaRaiz = Path.Combine(Directory.GetCurrentDirectory(), "QRCodeImagens");
-                if (!Directory.Exists(pastaRaiz))
-                {
-                    Directory.CreateDirectory(pastaRaiz); // Cria a pasta se não existir
-                }
-
-                // Gerar nome único para o arquivo, baseado no conteúdo do QR Code
-                string nomeArquivo = $"{conteudoCodigo}.png";
-                string caminhoCompleto = Path.Combine(pastaRaiz, nomeArquivo);
-
-                // Salvar a imagem do QR Code
-                qrImage.Save(caminhoCompleto, ImageFormat.Png);
+                _dbContext.SaveChanges();
             }
             catch (Exception ex)
             {
