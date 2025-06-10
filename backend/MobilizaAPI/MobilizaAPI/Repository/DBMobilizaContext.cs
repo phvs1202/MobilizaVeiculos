@@ -19,5 +19,6 @@ namespace MobilizaAPI.Repository
         public DbSet<veiculos> veiculos { get; set; }
         public DbSet<gerenciadores> gerenciadores { get; set; }
         public DbSet<status> status { get; set; }
+        public DbSet<cnh> cnh { get; set; }
     }
 }

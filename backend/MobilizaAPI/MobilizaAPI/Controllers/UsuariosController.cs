@@ -207,20 +207,6 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpGet("CnhEspecifico/{cnh}")] //Procurar user por cnh
-        public async Task<ActionResult<IEnumerable<usuarios>>> GetPorCNH(int cnh)
-        {
-            try
-            {
-                var usuarios = _dbContext.usuarios.Where(i => EF.Functions.Like(i.numero_cnh.ToString(), $"{cnh}%")).ToList();
-                return Ok(usuarios);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
         [HttpGet("qtdUser")] //Quantidade de usuarios
         public async Task<ActionResult<IEnumerable<usuarios>>> quantidade()
         {
