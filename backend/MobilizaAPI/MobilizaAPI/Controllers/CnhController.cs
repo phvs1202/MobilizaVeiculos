@@ -38,11 +38,43 @@ namespace MobilizaAPI.Controllers
             try
             {
                 var cnh = _dbContext.cnh.Where(i => i.id == id).FirstOrDefault();
+
+                if (cnh == null)
+                {
+                    return NotFound(new { message = "CNH não encontrado" });
+                }
+
                 return Ok(cnh);
             }
             catch (Exception ex)
             {
                 return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpGet("CnhUsuarioEspecifico/{usuario_id}")]
+        public async Task<ActionResult<cnh>> GetCnhPorUsuario(int usuario_id)
+        {
+            try
+            {
+                var cnh = await _dbContext.cnh
+                    .Where(i => i.usuario_id == usuario_id)
+                    .FirstOrDefaultAsync();
+
+                if (cnh == null)
+                {
+                    return NotFound(new { message = "CNH não encontrada para o usuário." });
+                }
+
+                return Ok(cnh);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    message = ex.Message,
+                    detalhes = ex.InnerException?.Message
+                });
             }
         }
 
