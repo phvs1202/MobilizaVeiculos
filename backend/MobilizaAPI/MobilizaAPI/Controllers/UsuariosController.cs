@@ -181,8 +181,22 @@ namespace MobilizaAPI.Controllers
         {
             try
             {
-                var usuarios = await _dbContext.usuarios.ToListAsync();
-                return Ok(usuarios.Count);
+                var usuarios = await _dbContext.usuarios
+                    .GroupBy(i => i.tipo_usuario_id)
+                    .Select(g => new
+                    {
+                        Tipo = g.Key,
+                        Quantidade = g.Count()
+                    }).ToListAsync();
+
+                var quantidades = new
+                {
+                    Aluno = usuarios.FirstOrDefault(i => i.Tipo == 1)?.Quantidade ?? 0,
+                    Funcionario = usuarios.FirstOrDefault(i => i.Tipo == 2)?.Quantidade ?? 0,
+                    Fornecedor = usuarios.FirstOrDefault(i => i.Tipo == 3)?.Quantidade ?? 0,
+                    Visitante = usuarios.FirstOrDefault(i => i.Tipo == 4)?.Quantidade ?? 0,
+                };
+                return Ok(quantidades);
             }
             catch (Exception ex)
             {

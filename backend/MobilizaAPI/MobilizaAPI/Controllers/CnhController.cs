@@ -191,5 +191,38 @@ namespace MobilizaAPI.Controllers
                 return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
             }
         }
+
+        [HttpGet("ValidadeUsuario")]
+        public async Task<ActionResult<IEnumerable<cnh>>> validade()
+        {
+            var validadeList = await _dbContext.cnh
+                .Select(c => new
+                {
+                    Id = c.id,
+                    Numero = c.numero_cnh,
+                    Validade = c.data_validade,
+                    UsuarioId = c.usuario_id
+                })
+                .ToListAsync();
+
+            var usuariosList = await _dbContext.usuarios
+                .Select(u => new
+                {
+                    Id = u.id,
+                    Nome = u.nome
+                })
+                .ToListAsync();
+
+            var resultado = from v in validadeList
+                            join u in usuariosList on v.UsuarioId equals u.Id
+                            select new
+                            {
+                                v.Numero,
+                                v.Validade,
+                                u.Nome
+                            };
+
+            return Ok(resultado);
+        }
     }
 }
