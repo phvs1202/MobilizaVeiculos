@@ -136,5 +136,20 @@ namespace MobilizaAPI.Controllers
                 return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
             }
         }
+
+        [HttpGet("FiltroEntradas")]
+        public async Task<ActionResult<entrada>> Entradas(DateTime? dataInicio, DateTime? dataFim)
+        {
+            var query = _dbContext.entrada.AsQueryable();
+
+            if (dataInicio != null)
+                query = query.Where(e => e.hora >= dataInicio.Value);
+
+            if (dataFim != null)
+                query = query.Where(e => e.hora <= dataFim.Value);
+
+            var resultado = await query.ToListAsync();
+            return Ok(resultado);
+        }
     }
 }

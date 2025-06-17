@@ -3,36 +3,28 @@
   "WorkspaceRootPath": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\cnhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\cnhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\veiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\veiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\entradacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\entradacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\gerenciadorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\gerenciadorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\saidacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\saidacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\gerenciadorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\gerenciadorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\cnhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\cnhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\veiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|solutionrelative:mobilizaapi\\controllers\\veiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B530A9B4-C45E-4350-AD80-134A12543CF9}|MobilizaAPI\\MobilizaAPI.csproj|c:\\mobilizaveiculos\\backend\\mobilizaapi\\mobilizaapi\\controllers\\cursocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,94 +47,84 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "MobilizaAPI\\appsettings.json",
-              "ToolTip": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\appsettings.json",
-              "RelativeToolTip": "MobilizaAPI\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-12T11:19:37.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "CnhController.cs",
               "DocumentMoniker": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\CnhController.cs",
               "RelativeDocumentMoniker": "MobilizaAPI\\Controllers\\CnhController.cs",
               "ToolTip": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\CnhController.cs",
               "RelativeToolTip": "MobilizaAPI\\Controllers\\CnhController.cs",
-              "ViewState": "AQIAAMEAAAAAAAAAAAAowM4AAAAAAAAA",
+              "ViewState": "AQIAAOsAAAAAAAAAAAAewPYAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T11:06:41.791Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "VeiculosController.cs",
               "DocumentMoniker": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\VeiculosController.cs",
               "RelativeDocumentMoniker": "MobilizaAPI\\Controllers\\VeiculosController.cs",
               "ToolTip": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\VeiculosController.cs",
               "RelativeToolTip": "MobilizaAPI\\Controllers\\VeiculosController.cs",
-              "ViewState": "AQIAAKYAAAAAAAAAAAAIwKsAAABLAAAA",
+              "ViewState": "AQIAALcAAAAAAAAAAAAcwL0AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T17:12:56.014Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "MobilizaAPI\\Controllers\\UsuariosController.cs",
               "ToolTip": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "MobilizaAPI\\Controllers\\UsuariosController.cs",
-              "ViewState": "AQIAAKwAAAAAAAAAAAAMwMkAAAANAAAA",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAMwMkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T17:12:16.938Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "SaidaController.cs",
               "DocumentMoniker": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\SaidaController.cs",
               "RelativeDocumentMoniker": "MobilizaAPI\\Controllers\\SaidaController.cs",
               "ToolTip": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\SaidaController.cs",
               "RelativeToolTip": "MobilizaAPI\\Controllers\\SaidaController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAwwDMAAAAsAAAA",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAcwDMAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T17:11:25.927Z"
+              "WhenOpened": "2025-06-05T17:11:25.927Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "GerenciadoresController.cs",
               "DocumentMoniker": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\GerenciadoresController.cs",
               "RelativeDocumentMoniker": "MobilizaAPI\\Controllers\\GerenciadoresController.cs",
               "ToolTip": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\GerenciadoresController.cs",
               "RelativeToolTip": "MobilizaAPI\\Controllers\\GerenciadoresController.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAIwFUAAAAjAAAA",
+              "ViewState": "AQIAAH0AAAAAAAAAAAAuwFUAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T17:10:54.797Z"
+              "WhenOpened": "2025-06-05T17:10:54.797Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "EntradaController.cs",
               "DocumentMoniker": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\EntradaController.cs",
               "RelativeDocumentMoniker": "MobilizaAPI\\Controllers\\EntradaController.cs",
               "ToolTip": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\EntradaController.cs",
               "RelativeToolTip": "MobilizaAPI\\Controllers\\EntradaController.cs",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAYwHoAAAANAAAA",
+              "ViewState": "AQIAAH0AAAAAAAAAAAAUwIIAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T17:09:27.215Z"
+              "WhenOpened": "2025-06-05T17:09:27.215Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "CursoController.cs",
               "DocumentMoniker": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Controllers\\CursoController.cs",
               "RelativeDocumentMoniker": "MobilizaAPI\\Controllers\\CursoController.cs",
@@ -151,19 +133,6 @@
               "ViewState": "AQIAACMAAAAAAAAAAAAwwDYAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T14:23:15.505Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Program.cs",
-              "RelativeDocumentMoniker": "MobilizaAPI\\Program.cs",
-              "ToolTip": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\Program.cs",
-              "RelativeToolTip": "MobilizaAPI\\Program.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAUwB4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T14:04:33.039Z",
-              "EditorCaption": ""
             }
           ]
         },

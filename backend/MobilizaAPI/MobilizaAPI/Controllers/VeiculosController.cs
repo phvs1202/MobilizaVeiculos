@@ -138,14 +138,13 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpGet("VeiculosAtivos/{id}")] //Trazer veiculos ativos
-        public async Task<ActionResult<IEnumerable<veiculos>>> GetAtivos(int id)
+        [HttpGet("VeiculosAtivos")] //Trazer veiculos ativos
+        public async Task<ActionResult<IEnumerable<veiculos>>> GetAtivos()
         {
             try
             {
                 var veiculos = await _dbContext.veiculos.Where(i => i.status_id == 1).ToListAsync();
-                var especifico = veiculos.Where(i => i.usuario_id == id).ToList();
-                return Ok(especifico);
+                return Ok(veiculos);
             }
             catch (Exception ex)
             {
@@ -153,14 +152,13 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpGet("VeiculosInativos/{id}")] //Trazer veiculos inativos
-        public async Task<ActionResult<IEnumerable<veiculos>>> GetInativos(int id)
+        [HttpGet("VeiculosInativos")] //Trazer veiculos inativos
+        public async Task<ActionResult<IEnumerable<veiculos>>> GetInativos()
         {
             try
             {
                 var veiculos = await _dbContext.veiculos.Where(i => i.status_id == 2).ToListAsync();
-                var especifico = veiculos.Where(i => i.usuario_id == id).ToList();
-                return Ok(especifico);
+                return Ok(veiculos);
             }
             catch (Exception ex)
             {
@@ -190,6 +188,20 @@ namespace MobilizaAPI.Controllers
                 };
 
                 return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpGet("VeiculoPorPlaca/{placa}")] //Trazer veiculo especifico por placa
+        public async Task<ActionResult<IEnumerable<veiculos>>> GetPlaca(string placa)
+        {
+            try
+            {
+                var veiculos = _dbContext.veiculos.Where(i => i.placa == placa).FirstOrDefault();
+                return Ok(veiculos);
             }
             catch (Exception ex)
             {

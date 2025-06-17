@@ -178,26 +178,37 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpPost("CriacaoQRCode/{id}")] //Criar qrcode
-        public async Task<ActionResult<IEnumerable<cnh>>> CriarQrcode(int id)
+        [HttpPost("CriacaoQRCode/{idVeiculo}")] //Criar qrcode
+        public async Task<ActionResult<IEnumerable<cnh>>> CriarQrcode(int idVeiculo)
         {
             try
             {
-                var User = _dbContext.usuarios.Where(i => i.id == id).FirstOrDefault();
+                var veiculo = _dbContext.veiculos.Where(i => i.id == idVeiculo).FirstOrDefault();
+                var user = _dbContext.usuarios.Where(i => i.id == veiculo.usuario_id).FirstOrDefault();
 
                 //Gerar QRCode
-                string tipoUsuario = User.tipo_usuario_id switch
+                //string tipoUsuario = user.tipo_usuario_id switch
+                //{
+                //    1 => "Aluno",
+                //    2 => "Funcionario",
+                //    3 => "Fornecedor",
+                //    4 => "Visitante",
+                //    _ => "Desconhecido"
+                //};
+
+                string tipoVeiculo = veiculo.tipo_veiculo_id switch
                 {
-                    1 => "Aluno",
-                    2 => "Funcionario",
-                    3 => "Fornecedor",
-                    4 => "Visitante",
+                    1 => "Carro",
+                    2 => "Moto",
+                    3 => "Van",
+                    4 => "Caminhão",
                     _ => "Desconhecido"
                 };
 
-                var cnh = _dbContext.cnh.Where(i => i.usuario_id == id).FirstOrDefault();
-                var conteudoCodigo = $"Nome-{User.nome}, Publico-{tipoUsuario}, CNH-{cnh.numero_cnh}";
+                var cnh = _dbContext.cnh.Where(i => i.usuario_id == user.id).FirstOrDefault();
+                var dataAtual = DateTime.Now.ToString("dd-MM-yyyy HH;mm");
 
+                var conteudoCodigo = $"Data-{dataAtual}, Nome-{user.nome}, CNH-{cnh.numero_cnh}, Placa-{veiculo.placa}, Tipo do Veiculo-{tipoVeiculo}";
                 QRCodeGenerator GeradorQR = new QRCodeGenerator();
                 var qrData = GeradorQR.CreateQrCode(conteudoCodigo, QRCodeGenerator.ECCLevel.Q);
                 using var qrCode = new QRCode(qrData);
