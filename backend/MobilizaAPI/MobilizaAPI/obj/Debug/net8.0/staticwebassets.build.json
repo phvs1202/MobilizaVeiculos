@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jGIsaOxvVSQ2ORA4poS9vN6ku0IMyPsREyWFzwGgCG4=",
+  "Hash": "fp/RaSLqeclCgIww9mxSjDeUpUVNwFYplnjrIhxehUU=",
   "Source": "MobilizaAPI",
   "BasePath": "_content/MobilizaAPI",
   "Mode": "Default",
@@ -91,6 +91,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ImagensVeiculos\\1.jpg"
+    },
+    {
+      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\31.jpg",
+      "SourceId": "MobilizaAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "BasePath": "_content/MobilizaAPI",
+      "RelativePath": "ImagensVeiculos/31.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ImagensVeiculos\\31.jpg"
+    },
+    {
+      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\QRCodeImagens\\Data-24-06-2025 10;24 ; Placa-aaa-1111.jpg",
+      "SourceId": "MobilizaAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "BasePath": "_content/MobilizaAPI",
+      "RelativePath": "QRCodeImagens/Data-24-06-2025 10;24 ; Placa-aaa-1111.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\QRCodeImagens\\Data-24-06-2025 10;24 ; Placa-aaa-1111.jpg"
     }
   ]
 }

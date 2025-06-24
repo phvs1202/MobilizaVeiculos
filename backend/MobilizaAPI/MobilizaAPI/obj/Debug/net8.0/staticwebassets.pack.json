@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\ImagensVeiculos\\1.jpg"
     },
     {
+      "Id": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\31.jpg",
+      "PackagePath": "staticwebassets\\ImagensVeiculos\\31.jpg"
+    },
+    {
+      "Id": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\QRCodeImagens\\Data-24-06-2025 10;24 ; Placa-aaa-1111.jpg",
+      "PackagePath": "staticwebassets\\QRCodeImagens\\Data-24-06-2025 10;24 ; Placa-aaa-1111.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MobilizaAPI.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
