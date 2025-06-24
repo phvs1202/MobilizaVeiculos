@@ -256,13 +256,19 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpGet("RetornarFoto/{id}")] //Trazer foto específica
-        public async Task<ActionResult<IEnumerable<usuarios>>> GetFoto(int id)
+        [HttpGet("RetornarFoto/{id}")] // Retorna caminho da foto do usuário
+        public async Task<ActionResult<string>> GetFoto(int id)
         {
             try
             {
-                var fotoUser = GetImagemBase64(id);
-                return Ok(fotoUser);
+                var usuario = await _dbContext.usuarios.FindAsync(id);
+
+                if (usuario == null || string.IsNullOrEmpty(usuario.foto_de_perfil))
+                    return NotFound("Usuário não encontrado ou sem foto.");
+
+                // Caminho relativo à pasta wwwroot
+                var caminhoRelativo = $"ImagensUsuarios/{usuario.foto_de_perfil}";
+                return Ok(caminhoRelativo);
             }
             catch (Exception ex)
             {
