@@ -10,6 +10,9 @@ using System.Security.Policy;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using QRCoder;
 using System.Drawing.Imaging;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Formats;
 
 namespace MobilizaAPI.Controllers
 {
@@ -120,8 +123,16 @@ namespace MobilizaAPI.Controllers
                 if (!Directory.Exists(pasta))
                     Directory.CreateDirectory(pasta);
 
+                using var image = await Image.LoadAsync(arquivo.OpenReadStream());
+                if (image.Width >= 400  || image.Height >= 400)
+                    return BadRequest("A imagem deve ter menos de 400x400 pixels!");
+
                 //nome único para o arquivo
-                var nomeArquivo = $"{Guid.NewGuid()}_{arquivo.FileName}";
+                string extensao = Path.GetExtension(arquivo.FileName);
+                if (string.IsNullOrEmpty(extensao) || extensao != ".jpg")
+                    return BadRequest("Extensão do arquivo não permitida!");
+
+                var nomeArquivo = $"{id}{extensao}";
                 var caminhoCompleto = Path.Combine(pasta, nomeArquivo);
 
                 //salva o arquivo
@@ -140,51 +151,6 @@ namespace MobilizaAPI.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, $"Erro interno: {ex.Message}");
-            }
-        }
-
-        [HttpPut("AtualizarFoto/{id}")]
-        public async Task<IActionResult> AtualizarFoto(int id, [FromForm] IFormFile novaFoto)
-        {
-            try
-            {
-                var usuario = await _dbContext.usuarios.FindAsync(id);
-                if (usuario == null)
-                    return NotFound("Usuário não encontrado.");
-
-                if (novaFoto == null || novaFoto.Length == 0)
-                    return BadRequest("Arquivo inválido.");
-
-                var pasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "ImagensUsuarios");
-                if (!Directory.Exists(pasta))
-                    Directory.CreateDirectory(pasta);
-
-                //exclui a foto anterior, se existir
-                if (!string.IsNullOrEmpty(usuario.foto_de_perfil))
-                {
-                    var caminhoFotoAntiga = Path.Combine(pasta, usuario.foto_de_perfil);
-                    if (System.IO.File.Exists(caminhoFotoAntiga))
-                        System.IO.File.Delete(caminhoFotoAntiga);
-                }
-
-                //salva a nova foto
-                var novoNomeArquivo = $"{Guid.NewGuid()}_{novaFoto.FileName}";
-                var caminhoNovo = Path.Combine(pasta, novoNomeArquivo);
-                using (var stream = new FileStream(caminhoNovo, FileMode.Create))
-                {
-                    await novaFoto.CopyToAsync(stream);
-                }
-
-                //atualiza no banco de dados
-                usuario.foto_de_perfil = novoNomeArquivo;
-                _dbContext.Update(usuario);
-                await _dbContext.SaveChangesAsync();
-
-                return Ok(new { message = "Foto atualizada com sucesso!", arquivo = novoNomeArquivo });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Erro ao atualizar foto: {ex.Message}");
             }
         }
 

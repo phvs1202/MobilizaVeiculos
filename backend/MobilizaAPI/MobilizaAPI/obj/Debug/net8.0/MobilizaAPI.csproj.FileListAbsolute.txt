@@ -121,3 +121,5 @@ C:\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\MobilizaAPI
 C:\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\MobilizaAPI.genruntimeconfig.cache
 C:\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\ref\MobilizaAPI.dll
 C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\bin\Debug\net8.0\MobilizaAPI.staticwebassets.runtime.json
+C:\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\bin\Debug\net8.0\MobilizaAPI.staticwebassets.runtime.json
+C:\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\bin\Debug\net8.0\SixLabors.ImageSharp.dll

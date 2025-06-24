@@ -178,63 +178,6 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpPost("CriacaoQRCode/{idVeiculo}")] //Criar qrcode
-        public async Task<ActionResult<IEnumerable<cnh>>> CriarQrcode(int idVeiculo)
-        {
-            try
-            {
-                var veiculo = _dbContext.veiculos.Where(i => i.id == idVeiculo).FirstOrDefault();
-                var user = _dbContext.usuarios.Where(i => i.id == veiculo.usuario_id).FirstOrDefault();
-
-                //Gerar QRCode
-                //string tipoUsuario = user.tipo_usuario_id switch
-                //{
-                //    1 => "Aluno",
-                //    2 => "Funcionario",
-                //    3 => "Fornecedor",
-                //    4 => "Visitante",
-                //    _ => "Desconhecido"
-                //};
-
-                string tipoVeiculo = veiculo.tipo_veiculo_id switch
-                {
-                    1 => "Carro",
-                    2 => "Moto",
-                    3 => "Van",
-                    4 => "Caminhão",
-                    _ => "Desconhecido"
-                };
-
-                var cnh = _dbContext.cnh.Where(i => i.usuario_id == user.id).FirstOrDefault();
-                var dataAtual = DateTime.Now.ToString("dd-MM-yyyy HH;mm");
-
-                var conteudoCodigo = $"Data-{dataAtual}, Nome-{user.nome}, CNH-{cnh.numero_cnh}, Placa-{veiculo.placa}, Tipo do Veiculo-{tipoVeiculo}";
-                QRCodeGenerator GeradorQR = new QRCodeGenerator();
-                var qrData = GeradorQR.CreateQrCode(conteudoCodigo, QRCodeGenerator.ECCLevel.Q);
-                using var qrCode = new QRCode(qrData);
-                using var qrImage = qrCode.GetGraphic(20);
-
-                // Garantir que o diretório existe
-                string pastaRaiz = Path.Combine(Directory.GetCurrentDirectory(), "QRCodeImagens");
-                if (!Directory.Exists(pastaRaiz))
-                {
-                    Directory.CreateDirectory(pastaRaiz); // Cria a pasta se não existir
-                }
-
-                // Gerar nome único para o arquivo, baseado no conteúdo do QR Code
-                string nomeArquivo = $"{conteudoCodigo}.png";
-                string caminhoCompleto = Path.Combine(pastaRaiz, nomeArquivo);
-
-                // Salvar a imagem do QR Code
-                qrImage.Save(caminhoCompleto, ImageFormat.Png);
-                return Ok("QRCode referente a essa conta foi criada!");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
         [HttpGet("ValidadeUsuario")]
         public async Task<ActionResult<IEnumerable<cnh>>> validade()
         {
