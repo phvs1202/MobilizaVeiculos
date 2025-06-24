@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\MobilizaAPI.csproj": {}
+    "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\MobilizaAPI.csproj": {}
   },
   "projects": {
-    "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\MobilizaAPI.csproj": {
+    "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\MobilizaAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\MobilizaAPI.csproj",
+        "projectUniqueName": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\MobilizaAPI.csproj",
         "projectName": "MobilizaAPI",
-        "projectPath": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\MobilizaAPI.csproj",
-        "packagesPath": "C:\\Users\\Pedro Valério\\.nuget\\packages\\",
-        "outputPath": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\obj\\",
+        "projectPath": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\MobilizaAPI.csproj",
+        "packagesPath": "C:\\Users\\Erick Anthony Novaes\\.nuget\\packages\\",
+        "outputPath": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Pedro Valério\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Erick Anthony Novaes\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -98,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -74,7 +74,8 @@ namespace MobilizaAPI.Controllers
                         nome = usuario.nome,
                         email = usuario.email,
                         tipo_usuario = usuario.tipo_usuario_id,
-                        curso_id = usuario.curso_id
+                        curso_id = usuario.curso_id,
+                        foto_de_perfil = usuario.foto_de_perfil
                     }
                 });
             }
@@ -124,7 +125,7 @@ namespace MobilizaAPI.Controllers
                     Directory.CreateDirectory(pasta);
 
                 using var image = await Image.LoadAsync(arquivo.OpenReadStream());
-                if (image.Width >= 400  || image.Height >= 400)
+                if (image.Width >= 400 || image.Height >= 400)
                     return BadRequest("A imagem deve ter menos de 400x400 pixels!");
 
                 //nome único para o arquivo
@@ -253,6 +254,31 @@ namespace MobilizaAPI.Controllers
             {
                 return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
             }
+        }
+
+        [HttpGet("RetornarFoto/{id}")] //Trazer foto específica
+        public async Task<ActionResult<IEnumerable<usuarios>>> GetFoto(int id)
+        {
+            try
+            {
+                var fotoUser = GetImagemBase64(id);
+                return Ok(fotoUser);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+        
+        private string GetImagemBase64(int id)
+        {
+            var pastaImagens = Path.Combine(Directory.GetCurrentDirectory(), "ImagensUsuarios");
+            var caminhoImagem = Path.Combine(pastaImagens, $"{id}.jpg");
+            var url = caminhoImagem.Replace("\\", "/");
+
+            Console.WriteLine("caminho da imagem: ", caminhoImagem);
+
+            return url;
         }
     }
 }

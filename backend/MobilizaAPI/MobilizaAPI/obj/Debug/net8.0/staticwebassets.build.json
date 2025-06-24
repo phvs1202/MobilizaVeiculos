@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kKG87TgSQd5O51S+DnlokJhbEgRqnqUzpkTTkFPZVnM=",
+  "Hash": "jGIsaOxvVSQ2ORA4poS9vN6ku0IMyPsREyWFzwGgCG4=",
   "Source": "MobilizaAPI",
   "BasePath": "_content/MobilizaAPI",
   "Mode": "Default",
@@ -10,17 +10,36 @@
     {
       "Name": "MobilizaAPI\\wwwroot",
       "Source": "MobilizaAPI",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\24.jpg",
+      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\23.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "BasePath": "_content/MobilizaAPI",
+      "RelativePath": "ImagensUsuarios/23.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\23.jpg"
+    },
+    {
+      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\24.jpg",
+      "SourceId": "MobilizaAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensUsuarios/24.jpg",
       "AssetKind": "All",
@@ -36,12 +55,12 @@
       "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\24.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\25.png",
+      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\26.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
-      "RelativePath": "ImagensUsuarios/25.png",
+      "RelativePath": "ImagensUsuarios/26.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\25.png"
+      "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\26.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\1.jpg",
+      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\1.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensVeiculos/1.jpg",
       "AssetKind": "All",
