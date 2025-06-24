@@ -3,7 +3,7 @@ using MobilizaAPI.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuração de CORS
+// Configuraï¿½ï¿½o de CORS
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -41,6 +41,8 @@ app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseStaticFiles();
 
 app.MapControllers();
 

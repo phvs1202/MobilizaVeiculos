@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "vVIzo+Ktw4/66b8nf+HLd/tjvTwki/LuUkvkWABGIe0=",
+  "Hash": "Ja3uQhmipH8RTcWWIa5cQ61U/GRRvqmlZUS8aJhOxuE=",
   "Source": "MobilizaAPI",
   "BasePath": "_content/MobilizaAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MobilizaAPI\\wwwroot",
+      "Source": "MobilizaAPI",
+      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "BasePath": "_content/MobilizaAPI",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
