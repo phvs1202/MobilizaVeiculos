@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using MobilizaAPI.Model;
 using MobilizaAPI.Repository;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MobilizaAPI.Controllers
 {
@@ -150,6 +153,40 @@ namespace MobilizaAPI.Controllers
 
             var resultado = await query.ToListAsync();
             return Ok(resultado);
+        }
+
+        [HttpGet("EntradaPorTipo")]
+        public async Task<ActionResult<entrada>> Entradas()
+        {
+            try
+            {
+                var usuarios = _dbContext.usuarios.ToList();
+                var entradas = _dbContext.entrada.ToList();
+
+                var entradasPorTipo = from entrada in entradas
+                                      join usuario in usuarios on entrada.usuarios_id equals usuario.id
+                                      group entrada by usuario.tipo_usuario_id into grupo
+                                      select new
+                                      {
+                                          TipoUsuarioId = grupo.Key,
+                                          QuantidadeEntradas = grupo.Count()
+                                      };
+
+                var resposta = new
+                {
+                    Aluno = entradasPorTipo.FirstOrDefault(i => i.TipoUsuarioId == 1)?.QuantidadeEntradas ?? 0,
+                    Funcionario = entradasPorTipo.FirstOrDefault(i => i.TipoUsuarioId == 2)?.QuantidadeEntradas ?? 0,
+                    Fornecedor = entradasPorTipo.FirstOrDefault(i => i.TipoUsuarioId == 3)?.QuantidadeEntradas ?? 0,
+                    Visitante = entradasPorTipo.FirstOrDefault(i => i.TipoUsuarioId == 4)?.QuantidadeEntradas ?? 0,
+                };
+
+                return Ok(resposta);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
