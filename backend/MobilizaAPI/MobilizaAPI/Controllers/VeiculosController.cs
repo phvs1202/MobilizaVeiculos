@@ -260,6 +260,23 @@ namespace MobilizaAPI.Controllers
             }
         }
 
+        [HttpGet("RetornarFotoVeiculo/{id}")]
+        public IActionResult RetornarFotoVeiculo(int id)
+        {
+            var veiculo = _dbContext.veiculos.Find(id);
+            if (veiculo == null || string.IsNullOrEmpty(veiculo.foto))
+                return NotFound("Veículo ou foto não encontrada.");
+
+            var pasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "ImagensVeiculos");
+            var caminhoImagem = Path.Combine(pasta, veiculo.foto);
+
+            if (!System.IO.File.Exists(caminhoImagem))
+                return NotFound("Arquivo de imagem não encontrado.");
+
+            var imagemBytes = System.IO.File.ReadAllBytes(caminhoImagem);
+            return File(imagemBytes, "image/jpeg");
+        }
+
         [HttpPost("CriacaoQRCode/{idVeiculo}")] //Criar qrcode
         public async Task<ActionResult<IEnumerable<cnh>>> CriarQrcode(int idVeiculo)
         {
@@ -308,7 +325,7 @@ namespace MobilizaAPI.Controllers
                 using var qrImage = qrCode.GetGraphic(20);
 
                 // Garantir que o diretório existe
-                string pastaRaiz = Path.Combine(Directory.GetCurrentDirectory(), "QRCodeImagens");
+                string pastaRaiz = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "QRCodeImagens");
                 if (!Directory.Exists(pastaRaiz))
                 {
                     Directory.CreateDirectory(pastaRaiz); // Cria a pasta se não existir
@@ -319,8 +336,9 @@ namespace MobilizaAPI.Controllers
                 string caminhoCompleto = Path.Combine(pastaRaiz, nomeArquivo);
 
                 // Salvar a imagem do QR Code
-                qrImage.Save(caminhoCompleto, ImageFormat.Png);
-                return Ok("QRCode referente a essa conta foi criada!");
+                qrImage.Save(caminhoCompleto, ImageFormat.Jpeg);
+                string urlImagem = $"{Request.Scheme}://{Request.Host}/QRCodeImagens/{Uri.EscapeDataString(nomeArquivo)}";
+                return Ok(urlImagem);
             }
             catch (Exception ex)
             {

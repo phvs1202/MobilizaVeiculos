@@ -47,11 +47,6 @@ C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Deb
 C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\MobilizaAPI.sourcelink.json
 C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\staticwebassets.development.json
-C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\staticwebassets\msbuild.MobilizaAPI.Microsoft.AspNetCore.StaticWebAssets.props
-C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\staticwebassets\msbuild.build.MobilizaAPI.props
-C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MobilizaAPI.props
-C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MobilizaAPI.props
-C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\staticwebassets.pack.json
 C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\scopedcss\bundle\MobilizaAPI.styles.css
 C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\Mobiliza.E4064260.Up2Date
 C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\MobilizaAPI.dll
@@ -124,3 +119,10 @@ C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\bin\Deb
 C:\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\bin\Debug\net8.0\MobilizaAPI.staticwebassets.runtime.json
 C:\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\bin\Debug\net8.0\SixLabors.ImageSharp.dll
 C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\bin\Debug\net8.0\SixLabors.ImageSharp.dll
+C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\bin\Debug\net8.0\MobilizaAPI.staticwebassets.endpoints.json
+C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\ProjetoMobilizaSENAI\MobilizaVeiculos\backend\MobilizaAPI\MobilizaAPI\obj\Debug\net8.0\staticwebassets.build.endpoints.json
