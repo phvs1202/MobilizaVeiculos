@@ -52,7 +52,7 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpGet("CnhUsuarioEspecifico/{usuario_id}")]
+        [HttpGet("CnhUsuarioEspecifico/{id}")]
         public async Task<ActionResult<cnh>> GetCnhPorUsuario(int usuario_id)
         {
             try

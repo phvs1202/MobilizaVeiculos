@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jGIsaOxvVSQ2ORA4poS9vN6ku0IMyPsREyWFzwGgCG4=",
+  "Hash": "Htkt20dpXG+ojQyJy3rAlqTOVpI0LJ/J9DDxd4G9NRw=",
   "Source": "MobilizaAPI",
   "BasePath": "_content/MobilizaAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MobilizaAPI\\wwwroot",
       "Source": "MobilizaAPI",
-      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\23.jpg",
+      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\23.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensUsuarios/23.jpg",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\23.jpg"
     },
     {
-      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\24.jpg",
+      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\24.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensUsuarios/24.jpg",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\24.jpg"
     },
     {
-      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\26.jpg",
+      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\26.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensUsuarios/26.jpg",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\26.jpg"
     },
     {
-      "Identity": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\1.jpg",
+      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\1.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\ProjetoMobilizaSENAI\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensVeiculos/1.jpg",
       "AssetKind": "All",
