@@ -285,15 +285,14 @@ namespace MobilizaAPI.Controllers
                 var veiculo = _dbContext.veiculos.Where(i => i.id == idVeiculo).FirstOrDefault();
                 var user = _dbContext.usuarios.Where(i => i.id == veiculo.usuario_id).FirstOrDefault();
 
-                //Gerar QRCode
-                //string tipoUsuario = user.tipo_usuario_id switch
-                //{
-                //    1 => "Aluno",
-                //    2 => "Funcionario",
-                //    3 => "Fornecedor",
-                //    4 => "Visitante",
-                //    _ => "Desconhecido"
-                //};
+                string motivoEntrada = user.tipo_usuario_id switch
+                {
+                    1 => "Estudar",                   // Aluno
+                    2 => "Entregar Produtos",         // Fornecedor
+                    3 => "Trabalhar",                 // Funcionário
+                    4 => "Visitar",                   // Visitante
+                    _ => "Desconhecido"
+                };
 
                 string tipoVeiculo = veiculo.tipo_veiculo_id switch
                 {
@@ -310,10 +309,13 @@ namespace MobilizaAPI.Controllers
                 var dados = new
                 {
                     Data = dataAtual,
+                    IdUsuario = user.id,
                     Nome = user.nome,
                     CNH = cnh.numero_cnh,
                     Placa = veiculo.placa,
                     TipoDoVeiculo = tipoVeiculo,
+                    idVeiculo = veiculo.id,
+                    MotivoEntrada = motivoEntrada,
                     CaminhoImagem = GetImagemBase64(veiculo.id)
                 };
 
