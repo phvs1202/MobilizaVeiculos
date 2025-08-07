@@ -202,20 +202,6 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpGet("VeiculoPorPlaca/{placa}")] //Trazer veiculo especifico por placa
-        public async Task<ActionResult<IEnumerable<veiculos>>> GetPlaca(string placa)
-        {
-            try
-            {
-                var veiculos = _dbContext.veiculos.Where(i => i.placa == placa).FirstOrDefault();
-                return Ok(veiculos);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
         [HttpPost("UploadFoto/{id}")] //upload de foto de carro
         public async Task<IActionResult> UploadFoto(int id, IFormFile arquivo)
         {

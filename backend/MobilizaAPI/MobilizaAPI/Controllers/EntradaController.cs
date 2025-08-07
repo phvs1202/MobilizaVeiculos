@@ -182,10 +182,9 @@ namespace MobilizaAPI.Controllers
 
                 return Ok(resposta);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
             }
         }
     }
