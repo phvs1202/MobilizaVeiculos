@@ -316,7 +316,7 @@ namespace MobilizaAPI.Controllers
                     TipoDoVeiculo = tipoVeiculo,
                     idVeiculo = veiculo.id,
                     MotivoEntrada = motivoEntrada,
-                    CaminhoImagem = GetImagemBase64(veiculo.id)
+                    CaminhoImagem = $"ImagensVeiculos/{veiculo.id}.jpg"
                 };
 
                 //var conteudoCodigo = $"Data-{dataAtual}, Nome-{user.nome}, CNH-{cnh.numero_cnh}, Placa-{veiculo.placa}, Tipo do Veiculo-{tipoVeiculo}";

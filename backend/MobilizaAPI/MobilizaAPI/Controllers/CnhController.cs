@@ -53,12 +53,12 @@ namespace MobilizaAPI.Controllers
         }
 
         [HttpGet("CnhUsuarioEspecifico/{id}")]
-        public async Task<ActionResult<cnh>> GetCnhPorUsuario(int usuario_id)
+        public async Task<ActionResult<cnh>> GetCnhPorUsuario(int id)
         {
             try
             {
                 var cnh = await _dbContext.cnh
-                    .Where(i => i.usuario_id == usuario_id)
+                    .Where(i => i.usuario_id == id)
                     .FirstOrDefaultAsync();
 
                 if (cnh == null)
