@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bSmpu685gGNByrBe5PXu3FKjm0DWafbhrDKUmJ8cW68=",
+  "Hash": "Nt30Yfcjgs5rWH63Z3PZrxD5UO4UGVkbYTor8ThXdcE=",
   "Source": "MobilizaAPI",
   "BasePath": "_content/MobilizaAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MobilizaAPI\\wwwroot",
       "Source": "MobilizaAPI",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\23.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\23.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensUsuarios/23.jpg",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\23.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\24.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\24.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensUsuarios/24.jpg",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\24.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\26.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\26.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensUsuarios/26.jpg",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\26.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\33.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\33.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensUsuarios/33.jpg",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\33.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\35.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\35.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensUsuarios/35.jpg",
       "AssetKind": "All",
@@ -112,10 +112,29 @@
       "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\35.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\1.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensUsuarios\\36.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "BasePath": "_content/MobilizaAPI",
+      "RelativePath": "ImagensUsuarios/36.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ImagensUsuarios\\36.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\1.jpg",
+      "SourceId": "MobilizaAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensVeiculos/1.jpg",
       "AssetKind": "All",
@@ -131,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensVeiculos\\1.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\32.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\32.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensVeiculos/32.jpg",
       "AssetKind": "All",
@@ -150,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensVeiculos\\32.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\33.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\33.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensVeiculos/33.jpg",
       "AssetKind": "All",
@@ -169,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensVeiculos\\33.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\36.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\36.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensVeiculos/36.jpg",
       "AssetKind": "All",
@@ -188,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensVeiculos\\36.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\37.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\37.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensVeiculos/37.jpg",
       "AssetKind": "All",
@@ -207,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\ImagensVeiculos\\37.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\39.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\39.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "ImagensVeiculos/39.jpg",
       "AssetKind": "All",
@@ -226,10 +245,29 @@
       "OriginalItemSpec": "wwwroot\\ImagensVeiculos\\39.jpg"
     },
     {
-      "Identity": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\QRCodeImagens\\Data-05-08-2025 14;01 ; Placa-ABC2D4.jpg",
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\ImagensVeiculos\\40.jpg",
       "SourceId": "MobilizaAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "BasePath": "_content/MobilizaAPI",
+      "RelativePath": "ImagensVeiculos/40.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ImagensVeiculos\\40.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\QRCodeImagens\\Data-05-08-2025 14;01 ; Placa-ABC2D4.jpg",
+      "SourceId": "MobilizaAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
       "BasePath": "_content/MobilizaAPI",
       "RelativePath": "QRCodeImagens/Data-05-08-2025 14;01 ; Placa-ABC2D4.jpg",
       "AssetKind": "All",
@@ -243,6 +281,63 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\QRCodeImagens\\Data-05-08-2025 14;01 ; Placa-ABC2D4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\QRCodeImagens\\Data-07-08-2025 09;39 ; Placa-ABC2D19.jpg",
+      "SourceId": "MobilizaAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "BasePath": "_content/MobilizaAPI",
+      "RelativePath": "QRCodeImagens/Data-07-08-2025 09;39 ; Placa-ABC2D19.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\QRCodeImagens\\Data-07-08-2025 09;39 ; Placa-ABC2D19.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\QRCodeImagens\\Data-07-08-2025 10;22 ; Placa-ABC2D19.jpg",
+      "SourceId": "MobilizaAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "BasePath": "_content/MobilizaAPI",
+      "RelativePath": "QRCodeImagens/Data-07-08-2025 10;22 ; Placa-ABC2D19.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\QRCodeImagens\\Data-07-08-2025 10;22 ; Placa-ABC2D19.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\QRCodeImagens\\Data-07-08-2025 10;23 ; Placa-ABC2D19.jpg",
+      "SourceId": "MobilizaAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Iago\\OneDrive - SESISENAISP - Escolas\\SENAI lençois\\Nova pasta\\iago-games\\MobilizaVeiculos\\backend\\MobilizaAPI\\MobilizaAPI\\wwwroot\\",
+      "BasePath": "_content/MobilizaAPI",
+      "RelativePath": "QRCodeImagens/Data-07-08-2025 10;23 ; Placa-ABC2D19.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\QRCodeImagens\\Data-07-08-2025 10;23 ; Placa-ABC2D19.jpg"
     }
   ]
 }
