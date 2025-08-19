@@ -46,6 +46,22 @@ namespace MobilizaAPI.Controllers
             }
         }
 
+        [HttpPut("AtivarCurso/{id}")] //status de inativo para ativo
+        public async Task<ActionResult<curso>> Ativar(int id)
+        {
+            try
+            {
+                var curso = await _dbContext.curso.FindAsync(id);
+                curso.status_id = 1;
+                await _dbContext.SaveChangesAsync();
+                return Ok("Curso foi inativado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
         [HttpPost("AdicionarCurso")] //Adicionar curso
         public async Task<ActionResult<curso>> AdicionarCurso([FromBody] curso curso)
         {
