@@ -17,34 +17,6 @@ namespace MobilizaAPI.Controllers
             _dbContext = dbContext;
         }
 
-        [HttpGet("TodosUser")] //Trazer todos os gerenciadores
-        public async Task<ActionResult<IEnumerable<gerenciadores>>> Get()
-        {
-            try
-            {
-                var gerenciadores = await _dbContext.gerenciadores.ToListAsync();
-                return Ok(gerenciadores);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
-        [HttpGet("UserEspecifico/{id}")] //Trazer gerenciador específico
-        public async Task<ActionResult<IEnumerable<gerenciadores>>> GetUser(int id)
-        {
-            try
-            {
-                var gerenciadores = _dbContext.gerenciadores.Where(i => i.id == id).FirstOrDefault();
-                return Ok(gerenciadores);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
         [HttpPost("LoginUser")] //Login do gerenciador
         public IActionResult Login([FromBody] LoginRequest login)
         {
@@ -95,65 +67,93 @@ namespace MobilizaAPI.Controllers
             return Ok(User);
         }
 
-        [HttpPut("AlterarGerenciador/{id}")] //Alterar gerenciador por id
-        public async Task<ActionResult<gerenciadores>> Atualizar(int id, [FromBody] gerenciadores gerenciadores)
-        {
-            try
-            {
-                var gerenciadorAtual = await _dbContext.gerenciadores.FindAsync(id);
+        //[HttpGet("TodosUser")] //Trazer todos os gerenciadores
+        //public async Task<ActionResult<IEnumerable<gerenciadores>>> Get()
+        //{
+        //    try
+        //    {
+        //        var gerenciadores = await _dbContext.gerenciadores.ToListAsync();
+        //        return Ok(gerenciadores);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+        //    }
+        //}
 
-                if (gerenciadorAtual == null)
-                    return NotFound();
+        //[HttpGet("UserEspecifico/{id}")] //Trazer gerenciador específico
+        //public async Task<ActionResult<IEnumerable<gerenciadores>>> GetUser(int id)
+        //{
+        //    try
+        //    {
+        //        var gerenciadores = _dbContext.gerenciadores.Where(i => i.id == id).FirstOrDefault();
+        //        return Ok(gerenciadores);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+        //    }
+        //}
 
-                gerenciadorAtual.nome = gerenciadores.nome;
-                gerenciadorAtual.email = gerenciadores.email;
-                gerenciadorAtual.senha = PasswordHasher.HashPassword(gerenciadores.senha);
+        //[HttpPut("AlterarGerenciador/{id}")] //Alterar gerenciador por id
+        //public async Task<ActionResult<gerenciadores>> Atualizar(int id, [FromBody] gerenciadores gerenciadores)
+        //{
+        //    try
+        //    {
+        //        var gerenciadorAtual = await _dbContext.gerenciadores.FindAsync(id);
 
-                _dbContext.Update(gerenciadorAtual);
-                await _dbContext.SaveChangesAsync();
-                return Ok(gerenciadorAtual);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
+        //        if (gerenciadorAtual == null)
+        //            return NotFound();
 
-        [HttpDelete("DeletarGerenciador/{id}")] // Deletar gerenciador específico
-        public async Task<ActionResult> Deletar(int id)
-        {
-            try
-            {
-                var gerenciadores = await _dbContext.gerenciadores.FindAsync(id);
+        //        gerenciadorAtual.nome = gerenciadores.nome;
+        //        gerenciadorAtual.email = gerenciadores.email;
+        //        gerenciadorAtual.senha = PasswordHasher.HashPassword(gerenciadores.senha);
 
-                if (gerenciadores == null)
-                    return NotFound();
+        //        _dbContext.Update(gerenciadorAtual);
+        //        await _dbContext.SaveChangesAsync();
+        //        return Ok(gerenciadorAtual);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+        //    }
+        //}
 
-                _dbContext.gerenciadores.Remove(gerenciadores);
-                await _dbContext.SaveChangesAsync();
+        //[HttpDelete("DeletarGerenciador/{id}")] // Deletar gerenciador específico
+        //public async Task<ActionResult> Deletar(int id)
+        //{
+        //    try
+        //    {
+        //        var gerenciadores = await _dbContext.gerenciadores.FindAsync(id);
 
-                return Ok("Gerenciador removido com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
+        //        if (gerenciadores == null)
+        //            return NotFound();
 
-        [HttpPut("InativarGerenciador/{id}")] //status de ativo para inativo
-        public async Task<ActionResult<gerenciadores>> Inativar(int id)
-        {
-            try
-            {
-                var gerenciadores = await _dbContext.gerenciadores.FindAsync(id);
-                gerenciadores.status_id = 2;
-                await _dbContext.SaveChangesAsync();
-                return Ok("Gerenciadores foi inativado com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
+        //        _dbContext.gerenciadores.Remove(gerenciadores);
+        //        await _dbContext.SaveChangesAsync();
+
+        //        return Ok("Gerenciador removido com sucesso!");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+        //    }
+        //}
+
+        //[HttpPut("InativarGerenciador/{id}")] //status de ativo para inativo
+        //public async Task<ActionResult<gerenciadores>> Inativar(int id)
+        //{
+        //    try
+        //    {
+        //        var gerenciadores = await _dbContext.gerenciadores.FindAsync(id);
+        //        gerenciadores.status_id = 2;
+        //        await _dbContext.SaveChangesAsync();
+        //        return Ok("Gerenciadores foi inativado com sucesso!");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+        //    }
+        //}
     }
 }

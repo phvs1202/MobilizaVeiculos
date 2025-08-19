@@ -70,101 +70,12 @@ namespace MobilizaAPI.Controllers
             }
         }
 
-        [HttpPut("AlterarVeiculo/{id}")] //Alterar veiculo por id
-        public async Task<ActionResult<veiculos>> Atualizar(int id, [FromBody] veiculos veiculos)
-        {
-            try
-            {
-                var veiculoAtual = await _dbContext.veiculos.FindAsync(id);
-
-                if (veiculoAtual == null)
-                    return NotFound();
-
-                veiculoAtual.placa = veiculos.placa;
-                veiculoAtual.tipo_veiculo_id = veiculos.tipo_veiculo_id;
-                veiculoAtual.usuario_id = veiculos.usuario_id;
-
-                _dbContext.Update(veiculoAtual);
-                await _dbContext.SaveChangesAsync();
-                return Ok(veiculoAtual);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
-        [HttpDelete("DeletarVeiculo/{id}")] // Deletar veiculo específico
-        public async Task<ActionResult> Deletar(int id)
-        {
-            try
-            {
-                var veiculos = await _dbContext.veiculos.FindAsync(id);
-
-                if (veiculos == null)
-                    return NotFound();
-
-                _dbContext.veiculos.Remove(veiculos);
-                await _dbContext.SaveChangesAsync();
-
-                return Ok("Veiculo removido com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
         [HttpGet("VeiculoPorUsuario/{id}")] //Trazer veiculo por usuario
         public async Task<ActionResult<IEnumerable<veiculos>>> GetVeiculos(int id)
         {
             try
             {
                 var veiculos = await _dbContext.veiculos.Where(i => i.usuario_id == id).ToListAsync();
-                return Ok(veiculos);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
-        [HttpPut("InativarVeiculos/{id}")] //status de ativo para inativo
-        public async Task<ActionResult<veiculos>> Inativar(int id)
-        {
-            try
-            {
-                var veiculos = await _dbContext.veiculos.FindAsync(id);
-                veiculos.status_id = 2;
-                await _dbContext.SaveChangesAsync();
-                return Ok("Veículo foi inativado com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
-        [HttpGet("VeiculosAtivos")] //Trazer veiculos ativos
-        public async Task<ActionResult<IEnumerable<veiculos>>> GetAtivos()
-        {
-            try
-            {
-                var veiculos = await _dbContext.veiculos.Where(i => i.status_id == 1).ToListAsync();
-                return Ok(veiculos);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-            }
-        }
-
-        [HttpGet("VeiculosInativos")] //Trazer veiculos inativos
-        public async Task<ActionResult<IEnumerable<veiculos>>> GetInativos()
-        {
-            try
-            {
-                var veiculos = await _dbContext.veiculos.Where(i => i.status_id == 2).ToListAsync();
                 return Ok(veiculos);
             }
             catch (Exception ex)
@@ -195,6 +106,22 @@ namespace MobilizaAPI.Controllers
                 };
 
                 return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+        
+        [HttpPut("InativarVeiculos/{id}")] //status de ativo para inativo
+        public async Task<ActionResult<veiculos>> Inativar(int id)
+        {
+            try
+            {
+                var veiculos = await _dbContext.veiculos.FindAsync(id);
+                veiculos.status_id = 2;
+                await _dbContext.SaveChangesAsync();
+                return Ok("Veículo foi inativado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -344,5 +271,79 @@ namespace MobilizaAPI.Controllers
 
             return url;
         }
+
+        //[HttpPut("AlterarVeiculo/{id}")] //Alterar veiculo por id
+        //public async Task<ActionResult<veiculos>> Atualizar(int id, [FromBody] veiculos veiculos)
+        //{
+        //    try
+        //    {
+        //        var veiculoAtual = await _dbContext.veiculos.FindAsync(id);
+
+        //        if (veiculoAtual == null)
+        //            return NotFound();
+
+        //        veiculoAtual.placa = veiculos.placa;
+        //        veiculoAtual.tipo_veiculo_id = veiculos.tipo_veiculo_id;
+        //        veiculoAtual.usuario_id = veiculos.usuario_id;
+
+        //        _dbContext.Update(veiculoAtual);
+        //        await _dbContext.SaveChangesAsync();
+        //        return Ok(veiculoAtual);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+        //    }
+        //}
+
+        //[HttpDelete("DeletarVeiculo/{id}")] // Deletar veiculo específico
+        //public async Task<ActionResult> Deletar(int id)
+        //{
+        //    try
+        //    {
+        //        var veiculos = await _dbContext.veiculos.FindAsync(id);
+
+        //        if (veiculos == null)
+        //            return NotFound();
+
+        //        _dbContext.veiculos.Remove(veiculos);
+        //        await _dbContext.SaveChangesAsync();
+
+        //        return Ok("Veiculo removido com sucesso!");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+        //    }
+        //}
+
+
+        //[HttpGet("VeiculosAtivos")] //Trazer veiculos ativos
+        //public async Task<ActionResult<IEnumerable<veiculos>>> GetAtivos()
+        //{
+        //    try
+        //    {
+        //        var veiculos = await _dbContext.veiculos.Where(i => i.status_id == 1).ToListAsync();
+        //        return Ok(veiculos);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+        //    }
+        //}
+
+        //[HttpGet("VeiculosInativos")] //Trazer veiculos inativos
+        //public async Task<ActionResult<IEnumerable<veiculos>>> GetInativos()
+        //{
+        //    try
+        //    {
+        //        var veiculos = await _dbContext.veiculos.Where(i => i.status_id == 2).ToListAsync();
+        //        return Ok(veiculos);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+        //    }
+        //}
     }
 }
