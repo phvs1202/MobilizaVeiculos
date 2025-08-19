@@ -30,6 +30,38 @@ namespace MobilizaAPI.Controllers
             }
         }
 
+        [HttpPut("InativarCurso/{id}")] //status de ativo para inativo
+        public async Task<ActionResult<curso>> Inativar(int id)
+        {
+            try
+            {
+                var curso = await _dbContext.curso.FindAsync(id);
+                curso.status_id = 2;
+                await _dbContext.SaveChangesAsync();
+                return Ok("Curso foi inativado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
+        [HttpPost("AdicionarCurso")] //Adicionar curso
+        public async Task<ActionResult<curso>> AdicionarCurso([FromBody] curso curso)
+        {
+            try
+            {
+                _dbContext.curso.Add(curso);
+                curso.status_id = 1;
+                await _dbContext.SaveChangesAsync();
+                return Ok(curso);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
+            }
+        }
+
         //[HttpGet("CursoEspecifico/{id}")] //Trazer curso específico
         //public async Task<ActionResult<IEnumerable<curso>>> GetCurso(int id)
         //{
@@ -44,21 +76,6 @@ namespace MobilizaAPI.Controllers
         //    }
         //}
 
-        //[HttpPost("AdicionarCurso")] //Adicionar curso
-        //public async Task<ActionResult<curso>> AdicionarCurso([FromBody] curso curso)
-        //{
-        //    try
-        //    {
-        //        _dbContext.curso.Add(curso);
-        //        curso.status_id = 1;
-        //        await _dbContext.SaveChangesAsync();
-        //        return Ok(curso);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-        //    }
-        //}
 
         //[HttpPut("AlterarCurso/{id}")] //Alterar curso por id
         //public async Task<ActionResult<curso>> Atualizar(int id, [FromBody] curso curso)
@@ -103,20 +120,5 @@ namespace MobilizaAPI.Controllers
         //    }
         //}
 
-        //[HttpPut("InativarCurso/{id}")] //status de ativo para inativo
-        //public async Task<ActionResult<curso>> Inativar(int id)
-        //{
-        //    try
-        //    {
-        //        var curso = await _dbContext.curso.FindAsync(id);
-        //        curso.status_id = 2;
-        //        await _dbContext.SaveChangesAsync();
-        //        return Ok("Curso foi inativado com sucesso!");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest($"{ex.Message} - Detalhes: {ex.InnerException?.Message}");
-        //    }
-        //}
     }
 }
